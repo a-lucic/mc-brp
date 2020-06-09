@@ -7,7 +7,7 @@ import math
 def get_tukeys_fences(dataset, feature):
     q1 = np.quantile(dataset[:, feature], 0.25)
     q3 = np.quantile(dataset[:, feature], 0.75)
-    tf1 = q3 - 1.5 * (q3 - q1)
+    tf1 = q1 - 1.5 * (q3 - q1)
     tf2 = q3 + 1.5 * (q3 - q1)
     return tf1, tf2
 
