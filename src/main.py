@@ -94,7 +94,7 @@ def main():
 		print("All perturbations result in large errors -- try increasing num_mc or num_features")
 	else:
 		for f in feature_ids:
-			stats.append(get_bounds_and_trend(f, perturbations_df))
+			stats.append(get_bounds_and_trend(f, R_prime))
 		mcbrp_explanation = get_explanation(stats, feature_ids, X_test.iloc[idx], X_train.columns)
 		mcbrp_explanation.to_csv('../results/MCBRP_explanation.csv')
 		print("MC-BRP Explanation: {}".format(mcbrp_explanation))
